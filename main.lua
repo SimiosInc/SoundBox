@@ -5,7 +5,19 @@ C_ChatInfo.RegisterAddonMessagePrefix(prefix)
 SLASH_SB1 = "/sb"
 
 function SlashCmdList.SB(option)
-    if option == "ahhh" then
+    if option == "version" then
+        print("|cff00FF96SoundBox Version|r: 0.3.0")
+    elseif option == "help" then
+        print("|cff00FF96SoundBox Help|r:" .. "\n" 
+        .. "- ahhh, allahu, babyshark, badum, bryant, cabra, careless, cato" .."\n" 
+        .. "- combobreaker, delfin, digievo, dolly, dungadunga, duri, esecompa" .."\n"
+        .. "- finish, gura, goh, gurgura, kala, krilin, kya, maduro, marvel" .. "\n"
+        .. "- medusamid, medusaint, migattefail, migatte, modem, mvc, nani".. "\n"
+        .. "- niconi, nos, pillarmen, plusultra, powaa, rezero, rosa, timmy".. "\n"
+        .. "- turtle, uooooh, tuturu, uooooh, vegeta, windows, wow, yametekudasai".. "\n"
+        .. "- yare, yubarta".. "\n")
+
+    elseif option == "ahhh" then
         PlaySoundFile(songPath .. "ahhh.ogg", "Master")
         C_ChatInfo.SendAddonMessage(prefix, "ahhh", InstanceOrParty())
     elseif option == "allahu" then
@@ -53,7 +65,7 @@ function SlashCmdList.SB(option)
     elseif option == "finish" then
         PlaySoundFile(songPath .. "finish-him.ogg", "Master")
         C_ChatInfo.SendAddonMessage(prefix, "finish-him", InstanceOrParty())
-    elseif option == "garu" then
+    elseif option == "gura" then
         PlaySoundFile(songPath .. "gawr-gura-a.ogg", "Master")
         C_ChatInfo.SendAddonMessage(prefix, "gawr-gura-a", InstanceOrParty())
     elseif option == "goh" then
@@ -149,6 +161,7 @@ function SlashCmdList.SB(option)
     elseif option == "yubarta" then
         PlaySoundFile(songPath .. "yubarta.ogg", "Master")
         C_ChatInfo.SendAddonMessage(prefix, "yubarta", InstanceOrParty())
+        SendChatMessage("Played: yubarta", "EMOTE", "Common", "");  --Por si a la gente le gusta que diga quien toco el sonido
     end
 end
 

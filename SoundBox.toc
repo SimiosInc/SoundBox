@@ -2,7 +2,7 @@
 ## Title: SoundBox
 ## Notes: Play some sounds :v
 ## Author: Endouken, Desik
-## Version: 0.2.2
+## Version: 0.3.0
 
 #@no-lib-strip@
 libs\LibStub\LibStub.lua
