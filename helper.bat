@@ -19,26 +19,26 @@ echo ## Dependencies: SharedMedia >> ..\SoundBox\SoundBox.toc
 echo main.lua >> ..\SoundBox\SoundBox.toc
 echo SharedMedia.lua >> ..\SoundBox\SoundBox.toc
 echo Creating the file...
-echo local LSM = LibStub("LibSharedMedia-3.0") > ..\SoundBox\SoundBox.lua
+echo local LSM = LibStub("LibSharedMedia-3.0") > ..\SoundBox\temp.lua
 
 echo    SOUND
-echo.>> ..\SoundBox\SoundBox.lua
-echo -- ----->> ..\SoundBox\SoundBox.lua
-echo --   SOUND>> ..\SoundBox\SoundBox.lua
-echo -- ----->> ..\SoundBox\SoundBox.lua
+echo.>> ..\SoundBox\temp.lua
+echo -- ----->> ..\SoundBox\temp.lua
+echo --   SOUND>> ..\SoundBox\temp.lua
+echo -- ----->> ..\SoundBox\temp.lua
 for %%F in (..\SoundBox\sound\*.*) do (
 echo       %%~nF
-echo LSM:Register("sound", "SoundBox:%%~nF", [[Interface\Addons\SoundBox\sound\%%~nxF]]^) >> ..\SoundBox\SoundBox.lua
+echo LSM:Register("sound", "SoundBox:%%~nF", [[Interface\Addons\SoundBox\sound\%%~nxF]]^) >> ..\SoundBox\temp.lua
 )
 
 echo    IMG
-echo.>> ..\SoundBox\SoundBox.lua
-echo -- ----->> ..\SoundBox\SoundBox.lua
-echo --   IMG>> ..\SoundBox\SoundBox.lua
-echo -- ----->> ..\SoundBox\SoundBox.lua
+echo.>> ..\SoundBox\temp.lua
+echo -- ----->> ..\SoundBox\temp.lua
+echo --   IMG>> ..\SoundBox\temp.lua
+echo -- ----->> ..\SoundBox\temp.lua
 for %%F in (..\SoundBox\img\*.*) do (
 echo       %%~nF
-echo LSM:Register("statusbar", "SoundBox:%%~nF", [[Interface\Addons\SoundBox\img\%%~nxF]]^) >> ..\SoundBox\SoundBox.lua
+echo LSM:Register("statusbar", "SoundBox:%%~nF", [[Interface\Addons\SoundBox\img\%%~nxF]]^) >> ..\SoundBox\temp.lua
 )
 
 :end_of_file
