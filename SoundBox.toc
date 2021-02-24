@@ -1,7 +1,14 @@
-## Interface: 90002 
-## Title: SoundBox 
-## Notes: Play some sounds :v 
-## Author: Endouken 
-## Dependencies: SharedMedia 
-main.lua 
-SharedMedia.lua 
+## Interface: 90002
+## Title: SoundBox
+## Notes: Play some sounds :v
+## Author: Endouken, Desik
+## Version: 0.2.2
+
+#@no-lib-strip@
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+libs\LibSharedMedia-3.0\lib.xml
+#@end-no-lib-strip@
+
+main.lua
+SharedMedia.lua
