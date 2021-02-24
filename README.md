@@ -20,4 +20,4 @@
 
 ## Installation
 
-> Download .zip file and decompress in "World of Warcraft\_retail_\Interface\addons\"
+> Download [https://github.com/Endouken/SoundBox/archive/main.zip] file and decompress in "World of Warcraft\_retail_\Interface\addons\"
