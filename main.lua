@@ -1,6 +1,10 @@
 local prefix = "SoundBox"
+local playerName = UnitName("player")
 local songPath = "Interface\\AddOns\\SoundBox\\sound\\"
-C_ChatInfo.RegisterAddonMessagePrefix(prefix)
+if not C_ChatInfo.IsAddonMessagePrefixRegistered(prefix) then
+    C_ChatInfo.RegisterAddonMessagePrefix(prefix)
+  end
+
 
 SLASH_SB1 = "/sb"
 
@@ -19,149 +23,148 @@ function SlashCmdList.SB(option)
 
     elseif option == "ahhh" then
         PlaySoundFile(songPath .. "ahhh.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "ahhh", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "ahhh", InstanceOrParty(), playerName)
     elseif option == "allahu" then
         PlaySoundFile(songPath .. "allahu.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "allahu", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "allahu", InstanceOrParty(), playerName)
     elseif option == "babyshark" then
         PlaySoundFile(songPath .. "babyshark.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "babyshark", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "babyshark", InstanceOrParty(), playerName)
     elseif option == "badum" then
         PlaySoundFile(songPath .. "badum.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "badum", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "badum", InstanceOrParty(), playerName)
     elseif option == "bryant" then
         PlaySoundFile(songPath .. "bryant.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "bryant", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "bryant", InstanceOrParty(), playerName)
     elseif option == "cabra" then
         PlaySoundFile(songPath .. "cabra.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "cabra", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "cabra", InstanceOrParty(), playerName)
     elseif option == "careless" then
         PlaySoundFile(songPath .. "careless.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "careless", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "careless", InstanceOrParty(), playerName)
     elseif option == "cato" then
         PlaySoundFile(songPath .. "cato.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "cato", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "cato", InstanceOrParty(), playerName)
     elseif option == "combobreaker" then
         PlaySoundFile(songPath .. "combobreaker.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "combobreaker", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "combobreaker", InstanceOrParty(), playerName)
     elseif option == "delfin" then
         PlaySoundFile(songPath .. "delfin.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "delfin", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "delfin", InstanceOrParty(), playerName)
     elseif option == "digievo" then
         PlaySoundFile(songPath .. "digievo.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "digievo", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "digievo", InstanceOrParty(), playerName)
     elseif option == "dolly" then
         PlaySoundFile(songPath .. "dolly.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "dolly", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "dolly", InstanceOrParty(), playerName)
     elseif option == "dungadunga" then
         PlaySoundFile(songPath .. "dungadunga.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "dungadunga", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "dungadunga", InstanceOrParty(), playerName)
     elseif option == "duri" then
         PlaySoundFile(songPath .. "duri.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "duri", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "duri", InstanceOrParty(), playerName)
     elseif option == "esecompa" then
         PlaySoundFile(songPath .. "ese-compa.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "ese-compa", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "ese-compa", InstanceOrParty(), playerName)
     elseif option == "finish" then
         PlaySoundFile(songPath .. "finish-him.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "finish-him", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "finish-him", InstanceOrParty(), playerName)
     elseif option == "gura" then
         PlaySoundFile(songPath .. "gawr-gura-a.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "gawr-gura-a", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "gawr-gura-a", InstanceOrParty(), playerName)
     elseif option == "goh" then
         PlaySoundFile(songPath .. "get_over_here.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "get_over_here", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "get_over_here", InstanceOrParty(), playerName)
     elseif option == "gurgura" then
         PlaySoundFile(songPath .. "gurgura.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "gurgura", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "gurgura", InstanceOrParty(), playerName)
     elseif option == "kala" then
         PlaySoundFile(songPath .. "kala.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "kala", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "kala", InstanceOrParty(), playerName)
     elseif option == "krilin" then
         PlaySoundFile(songPath .. "krilin.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "krilin", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "krilin", InstanceOrParty(), playerName)
     elseif option == "kya" then
         PlaySoundFile(songPath .. "kya.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "kya", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "kya", InstanceOrParty(), playerName)
     elseif option == "maduro" then
         PlaySoundFile(songPath .. "maduro-chupalo.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "maduro-chupalo", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "maduro-chupalo", InstanceOrParty(), playerName)
     elseif option == "marvel" then
         PlaySoundFile(songPath .. "marvel.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "marvel", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "marvel", InstanceOrParty(), playerName)
     elseif option == "medusamid" then
         PlaySoundFile(songPath .. "medusa-climax.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "medusa-climax", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "medusa-climax", InstanceOrParty(), playerName)
     elseif option == "medusaint" then
         PlaySoundFile(songPath .. "medusa-intro.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "medusa-intro", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "medusa-intro", InstanceOrParty(), playerName)
     elseif option == "migattefail" then
         PlaySoundFile(songPath .. "migatte-fail.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "migatte-fail", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "migatte-fail", InstanceOrParty(), playerName)
     elseif option == "migatte" then
         PlaySoundFile(songPath .. "migatte.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "migatte", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "migatte", InstanceOrParty(), playerName)
     elseif option == "modem" then
         PlaySoundFile(songPath .. "modem.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "modem", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "modem", InstanceOrParty(), playerName)
     elseif option == "mvc" then
         PlaySoundFile(songPath .. "mvc.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "mvc", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "mvc", InstanceOrParty(), playerName)
     elseif option == "nani" then
         PlaySoundFile(songPath .. "nani.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "nani", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "nani", InstanceOrParty(), playerName)
     elseif option == "niconi" then
         PlaySoundFile(songPath .. "niconi.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "niconi", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "niconi", InstanceOrParty(), playerName)
     elseif option == "nos" then
         PlaySoundFile(songPath .. "nos-estan-atacando.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "nos-estan-atacando", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "nos-estan-atacando", InstanceOrParty(), playerName)
     elseif option == "pillarmen" then
         PlaySoundFile(songPath .. "pillarmen.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "pillarmen", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "pillarmen", InstanceOrParty(), playerName)
     elseif option == "plusultra" then
         PlaySoundFile(songPath .. "plusultra.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "plusultra", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "plusultra", InstanceOrParty(), playerName)
     elseif option == "powaa" then
         PlaySoundFile(songPath .. "powaa.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "powaa", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "powaa", InstanceOrParty(), playerName)
     elseif option == "rezero" then
         PlaySoundFile(songPath .. "rezero.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "rezero", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "rezero", InstanceOrParty(), playerName)
     elseif option == "rosa" then
         PlaySoundFile(songPath .. "rosa.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "rosa", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "rosa", InstanceOrParty(), playerName)
     elseif option == "timmy" then
         PlaySoundFile(songPath .. "timmy.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "timmy", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "timmy", InstanceOrParty(), playerName)
     elseif option == "turtle" then
         PlaySoundFile(songPath .. "turtle.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "turtle", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "turtle", InstanceOrParty(), playerName)
     elseif option == "tuturu" then
         PlaySoundFile(songPath .. "tuturu.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "tuturu", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "tuturu", InstanceOrParty(), playerName)
     elseif option == "uooooh" then
         PlaySoundFile(songPath .. "uooooh.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "uooooh", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "uooooh", InstanceOrParty(), playerName)
     elseif option == "vegeta" then
         PlaySoundFile(songPath .. "vegeta.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "vegeta", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "vegeta", InstanceOrParty(), playerName)
     elseif option == "windows" then
         PlaySoundFile(songPath .. "windows.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "windows", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "windows", InstanceOrParty(), playerName)
     elseif option == "wow" then
         PlaySoundFile(songPath .. "wow.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "wow", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "wow", InstanceOrParty(), playerName)
     elseif option == "yametekudasai" then
         PlaySoundFile(songPath .. "yametekudasai.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "yametekudasai", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "yametekudasai", InstanceOrParty(), playerName)
     elseif option == "yare" then
         PlaySoundFile(songPath .. "yare.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "yare", InstanceOrParty())
+        C_ChatInfo.SendAddonMessage(prefix, "yare", InstanceOrParty(), playerName)
     elseif option == "yubarta" then
         PlaySoundFile(songPath .. "yubarta.ogg", "Master")
-        C_ChatInfo.SendAddonMessage(prefix, "yubarta", InstanceOrParty())
-        SendChatMessage("Played: yubarta", "EMOTE", "Common", "");  --Por si a la gente le gusta que diga quien toco el sonido
+        C_ChatInfo.SendAddonMessage(prefix, "yubarta", InstanceOrParty(), playerName)
     end
 end
 
