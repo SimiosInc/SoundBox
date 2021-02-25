@@ -1,24 +1,25 @@
-name: CI
+name: Package addon
 
 on:
   push:
     branches:
       - main
     tags:
-      - "*"
-      - "!**-alpha**"
+      - '*'
+    paths-ignore:
+      - '.github/**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
-      
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout addon
+        uses: actions/checkout@v1
         with:
-          fetch-depth: 500
+          fetch-depth: 100
 
-      - name: Create Retail Package
+      - name: Package
         uses: BigWigsMods/packager@master
+        env:
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
