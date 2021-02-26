@@ -76,7 +76,7 @@ f:SetScript(
 
         PlaySoundFile(songPath .. soundFile .. ".ogg", "Master")
 
-        -- --[[ Debug
+         --[[ 
         print("\n"..
             "|cff00FF96Prefix|r:" .. prefix.. "\n",
             "|cff00FF96Path|r:" .. songPath.. "\n" ,
@@ -84,7 +84,7 @@ f:SetScript(
             "|cff00FF96By|r:" .. sender.. "\n" ,
             "|cff00FF96In|r:" .. channel.. "\n" 
         ) 
-        -- --]]
+         --]]
     end
 )
 
