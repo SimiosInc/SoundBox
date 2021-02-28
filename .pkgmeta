@@ -9,6 +9,6 @@ enable-nolib-creation: no
 
 ignore:
   - README.md
-  - helper.bat
+  - _sounds.bat
+  - _create.bat
   - temp.lua
-  - sounds.lua
