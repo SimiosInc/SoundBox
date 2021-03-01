@@ -26,8 +26,8 @@ f:SetScript(
             end
 
             if not setDND then
-                local soundFile = folderName .. fileName .. ".ogg"
-                local ok, _, handle = pcall(PlaySoundFile, soundFile, "Master")
+                local soundPath = folderName .. fileName .. ".ogg"
+                local ok, _, handle = pcall(PlaySoundFile, soundPath, "Master")
 
                 if ok then
                     soundHandle = handle
