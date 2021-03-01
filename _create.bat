@@ -16,6 +16,7 @@ echo ## Title: SoundBox >> ..\SoundBox\SoundBox.toc
 echo ## Notes: Play some sounds :v >> ..\SoundBox\SoundBox.toc
 echo ## Author: Endouken, Desik >> ..\SoundBox\SoundBox.toc
 echo ## Version: @project-version@>> ..\SoundBox\SoundBox.toc
+echo ## SavedVariables: SoundBoxDB>> ..\SoundBox\SoundBox.toc
 echo.>> ..\SoundBox\SoundBox.toc
 echo #@no-lib-strip@ >> ..\SoundBox\SoundBox.toc
 echo libs\LibStub\LibStub.lua >> ..\SoundBox\SoundBox.toc
