@@ -1,14 +1,16 @@
-## Interface: 90002
-## Title: SoundBox
-## Notes: Play some sounds :v
-## Author: Endouken, Desik
-## Version: 1.0
+## Interface: 90002 
+## Title: SoundBox 
+## Notes: Play some sounds :v 
+## Author: Endouken, Desik 
+## Version: @project-version@
+## SavedVariables: SoundBoxDB
 
-#@no-lib-strip@
-libs\LibStub\LibStub.lua
-libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
-libs\LibSharedMedia-3.0\lib.xml
-#@end-no-lib-strip@
+#@no-lib-strip@ 
+libs\LibStub\LibStub.lua 
+libs\CallbackHandler-1.0\CallbackHandler-1.0.xml 
+libs\LibSharedMedia-3.0\lib.xml 
+#@end-no-lib-strip@ 
 
-main.lua
-SharedMedia.lua
+sounds.lua 
+SharedMedia.lua 
+main.lua 
