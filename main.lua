@@ -1,6 +1,6 @@
 local _, S = ...
 
-local prefix = "SoundBox"
+local addonPrefix = "SoundBox"
 local folderName = "Interface\\AddOns\\SoundBox\\sound\\"
 local playerName = UnitName("player")
 local soundHandle
@@ -19,7 +19,7 @@ f:RegisterEvent("CHAT_MSG_ADDON")
 f:SetScript(
     "OnEvent",
     function(self, event, prefix, message, channel, sender)
-        if event == "CHAT_MSG_ADDON" and prefix then
+        if event == "CHAT_MSG_ADDON" and prefix == addonPrefix then
             local fileName = sounds[message]
             if not fileName then
                 return
@@ -42,7 +42,7 @@ f:SetScript(
                 --@debug@
                 if setDebug then
                     print(
-                        "|cff00FF96Prefix|r: " .. prefix .. "\n",
+                        "|cff00FF96Prefix|r: " .. addonPrefix .. "\n",
                         "|cff00FF96Folder|r: " .. folderName .. "\n",
                         "|cff00FF96File|r: " .. fileName .. "\n",
                         "|cff00FF96By|r: " .. sender .. "\n",
@@ -128,14 +128,14 @@ SlashCmdList.SB = function(message)
             channel = "PARTY"
         end
     else
-        C_ChatInfo.SendAddonMessage(prefix, message, "WHISPER", playerName)
+        C_ChatInfo.SendAddonMessage(addonPrefix, message, "WHISPER", playerName)
     end
 
     -- convert to lowercase
     message = strlower(strtrim(message))
 
     -- Send it:
-    C_ChatInfo.SendAddonMessage(prefix, message, channel)
+    C_ChatInfo.SendAddonMessage(addonPrefix, message, channel)
 end
 
-C_ChatInfo.RegisterAddonMessagePrefix(prefix)
+C_ChatInfo.RegisterAddonMessagePrefix(addonPrefix)
