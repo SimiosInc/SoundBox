@@ -1,7 +1,7 @@
 local _, S = ...
 
 local prefix = "SoundBox"
-local songPath = "Interface\\AddOns\\SoundBox\\sound\\"
+local folderName = "Interface\\AddOns\\SoundBox\\sound\\"
 local playerName = UnitName("player")
 local soundHandle
 local soundFileID = 0
@@ -20,14 +20,13 @@ f:SetScript(
     "OnEvent",
     function(self, event, prefix, message, channel, sender)
         if event == "CHAT_MSG_ADDON" and prefix then
-
             local fileName = sounds[message]
             if not fileName then
                 return
             end
 
             if not setDND then
-                local soundFile = songPath .. fileName .. ".ogg"
+                local soundFile = folderName .. fileName .. ".ogg"
                 local ok, _, handle = pcall(PlaySoundFile, soundFile, "Master")
 
                 if ok then
@@ -44,14 +43,14 @@ f:SetScript(
                 if setDebug then
                     print(
                         "|cff00FF96Prefix|r: " .. prefix .. "\n",
-                        "|cff00FF96Path|r: " .. songPath .. "\n",
+                        "|cff00FF96Folder|r: " .. folderName .. "\n",
                         "|cff00FF96File|r: " .. fileName .. "\n",
                         "|cff00FF96By|r: " .. sender .. "\n",
                         "|cff00FF96In|r: " .. channel .. "\n",
                         "|cff00FF96Handle|r: " .. handle .. "\n"
                     )
                 end
-                --@end-debug@
+            --@end-debug@
             end
         end
     end
@@ -96,7 +95,7 @@ SlashCmdList.SB = function(message)
             print("|cff00FF96SoundBox|r\124|Set:|cFFFF8040 Do Not Disturb ON|r")
         end
     end
-    
+
     --@debug@
     if message == "debug" then
         if setDebug then
