@@ -1,18 +1,17 @@
 # SoundBox
+# Don't let your memes be dreams
 
 ## Introduction
 
 > This is a simple addon to play sounds in world of warcraft
 
-## Code Samples
-
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-
+# Sb commands
 >    - /sb 
 >    - /sb version
 >    - /sb help
 >    - /sb sounds
+
+## Sound examples
 >    - /sb migatte (this is a example of use)
 >    - aiuda, aleluya, babyshark, allahu, badum, bh, bhl, cabra 
 >    - careless, cato, circo, combo, compa, delfin, digievo, dolly
