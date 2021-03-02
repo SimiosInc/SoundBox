@@ -4,7 +4,7 @@
 
 > This is a simple addon to play sounds in world of warcraft
 
-# Sb Commands
+## Sb Commands
 >    - /sb 
 >    - /sb version
 >    - /sb help
