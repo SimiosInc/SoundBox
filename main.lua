@@ -19,6 +19,7 @@ f:RegisterEvent("CHAT_MSG_ADDON")
 f:SetScript(
     "OnEvent",
     function(self, event, prefix, message, channel, sender)
+
         if event == "CHAT_MSG_ADDON" and prefix == addonPrefix then
             local fileName = sounds[message]
             if not fileName then
@@ -50,7 +51,7 @@ f:SetScript(
                         "|cff00FF96Handle|r: " .. handle .. "\n"
                     )
                 end
-            --@end-debug@
+                --@end-debug@
             end
         end
     end
@@ -86,10 +87,9 @@ SlashCmdList.SB = function(message)
         print("|cff00FF96SoundBox|r\124|Sounds: /sb |r" .. s )
     end
 
-    if message == "help" then
-        print("|cff00FF96SoundBox|r\124|Help: |cFFFF8040/sb version, dnd, who, stop  " .. s .. "|r")
+    if message == "help" or message == "?" then
+        print("|cff00FF96SoundBox|r\124|Help: |cFFFF8040Commands: Help, Version, DND, Who, Stop \n              Type /sb |cff00FF96sounds|r to see all available sounds.|r")
     end
-
 
     if message == "dnd" then
         if setDND then
