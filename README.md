@@ -1,23 +1,31 @@
-# SoundBox
+# SoundBox: Don't let your memes be dreams
 
 ## Introduction
 
 > This is a simple addon to play sounds in world of warcraft
 
-## Code Samples
-
+## Sb Commands
 >    - /sb 
->    - /sb version
->    - /sb help
->    - /sb cabra
->    - ahhh, allahu, babyshark, badum, bryant, cabra, careless, cato 
->    - combobreaker, delfin, digievo, dolly, dungadunga, duri, esecompa
->    - finish, gura, goh, gurgura, kala, krilin, kya, maduro, marvel
->    - medusamid, medusaint, migattefail, migatte, modem, mvc, nani
->    - niconi, nos, pillarmen, plusultra, powaa, rezero, rosa, timmy
->    - turtle, uooooh, tuturu, uooooh, vegeta, windows, wow, yametekudasai
->    -  yare, yubarta
+>    - /sb version (show the version of the addon)
+>    - /stop       (Stops all playing sounds)
+>    - /sb dnd     (Enable or disable the Don't disturb mode)
+>    - /sb who     (Enable or disable the Announcer)
+>    - /sb help    (Show available command list)
+>    - /sb sounds  (show the sounds list) 
+>    
+## Example of Use
+>    - /sb migatte (this is a example of use)
+>    - aiuda, aleluya, babyshark, allahu, badum, bh, bhl, cabra 
+>    - careless, cato, circo, combo, compa, delfin, digievo, dolly
+>    - drama, dunga, duri, fa, finish, giorno ,godno, goh, gura, 
+>    - gurgura, haha, jeopardy, kala, kek, krillin, kya, maduro
+>    - marvelf, marvelv, medusac, medusai, mi, migatte, migattef
+>    - mission, modem, nani, niconi, nono, nos, ohno, paw, pillarmen
+>    - plusultra, powaa, rezero, rosa, run, sounds, tbc, timmy
+>    - titanic, titanicl, tuturu, uoh, vegeta, violin, violinl
+>    - wee, windows, wow, xfiles, yametekudasai, yare, yay, yubarta
+>    - zawarudo
 
 ## Installation
 
-> Download [https://github.com/Endouken/SoundBox/archive/main.zip] file and decompress in "World of Warcraft\_retail_\Interface\addons\"
+> Download [https://github.com/Endouken/SoundBox/releases/latest] file and decompress in "World of Warcraft\_retail_\Interface\addons\"
