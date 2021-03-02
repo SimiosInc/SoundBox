@@ -6,10 +6,13 @@
 
 ## Sb Commands
 >    - /sb 
->    - /sb version
->    - /sb help
->    - /sb sounds
-
+>    - /sb version (show the version of the addon)
+>    - /stop       (Stops all playing sounds)
+>    - /sb dnd     (Enable or disable the Don't disturb mode)
+>    - /sb who     (Enable or disable the Announcer)
+>    - /sb help    (Show available command list)
+>    - /sb sounds  (show the sounds list) 
+>    
 ## Example of Use
 >    - /sb migatte (this is a example of use)
 >    - aiuda, aleluya, babyshark, allahu, badum, bh, bhl, cabra 
