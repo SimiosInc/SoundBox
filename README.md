@@ -1,5 +1,4 @@
-# SoundBox
->  Don't let your memes be dreams
+# SoundBox: Don't let your memes be dreams
 
 ## Introduction
 
