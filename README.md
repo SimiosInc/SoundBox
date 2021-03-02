@@ -4,13 +4,13 @@
 
 > This is a simple addon to play sounds in world of warcraft
 
-# Sb commands
+# Sb Commands
 >    - /sb 
 >    - /sb version
 >    - /sb help
 >    - /sb sounds
 
-## Sound examples
+## Example of Use
 >    - /sb migatte (this is a example of use)
 >    - aiuda, aleluya, babyshark, allahu, badum, bh, bhl, cabra 
 >    - careless, cato, circo, combo, compa, delfin, digievo, dolly
