@@ -77,14 +77,19 @@ SlashCmdList.SB = function(message)
         print("|cff00FF96SoundBox|r: |cFFFF8040Version: |r" .. version)
     end
 
-    if message == "help" then
+    if message == "sounds" then
         local s = ""
         sounds.sounds = "cmd"
         for k, _ in pairs(sounds) do
             s = s .. k .. ", "
         end
-        print("|cff00FF96SoundBox|r\124|Help: |cFFFF8040/sb " .. s .. "|r")
+        print("|cff00FF96SoundBox|r\124|Sounds: /sb |r" .. s )
     end
+
+    if message == "help" then
+        print("|cff00FF96SoundBox|r\124|Help: |cFFFF8040/sb version, dnd, who, stop  " .. s .. "|r")
+    end
+
 
     if message == "dnd" then
         if setDND then
