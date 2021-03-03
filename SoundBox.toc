@@ -1,6 +1,6 @@
 ## Interface: 90002 
-## Title: SoundBox 
-## Notes: Play some sounds :v 
+## Title: |cff00FF96SoundBox|r 
+## Notes: Don't let your memes be dreams 
 ## Author: Endouken, Desik 
 ## Version: @project-version@
 ## SavedVariables: SoundBoxDB
