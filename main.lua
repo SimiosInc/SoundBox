@@ -12,6 +12,8 @@ local setDND = false
 local setDebug = false
 local version
 
+BINDING_NAME_SOUNDBOX_STOPSOUND = "Stop Sound"
+
 --   Create listener Frame
 
 local f = CreateFrame("Frame")
@@ -19,7 +21,8 @@ f:RegisterEvent("CHAT_MSG_ADDON")
 f:SetScript(
     "OnEvent",
     function(self, event, prefix, message, channel, sender)
-        if event == "CHAT_MSG_ADDON" and prefix == addonPrefix then
+
+        if event == "CHAT_MSG_ADDON" and prefix == addonPrefix then            
             local fileName = sounds[message]
             if not fileName then
                 return
@@ -56,12 +59,7 @@ f:SetScript(
     end
 )
 
--- Create Sender Slash Command
-
-SLASH_SB1 = "/sb"
-SlashCmdList.SB = function(message)
-
-    if message == "stop" then
+function SoundBox_Stop()
         for _, handle in pairs(playList) do
             StopSound(handle)
             playList = {}
@@ -71,6 +69,15 @@ SlashCmdList.SB = function(message)
             end
             --@end-debug@
         end
+end
+
+-- Create Sender Slash Command
+
+SLASH_SB1 = "/sb"
+SlashCmdList.SB = function(message)
+
+    if message == "stop" then
+       SBStopSound()          
     end
 
     if message == "version" then
@@ -80,7 +87,6 @@ SlashCmdList.SB = function(message)
 
     if message == "sounds" then
         local s = ""
-        sounds.sounds = "cmd"
         for k, _ in pairs(sounds) do
             s = s .. k .. ", "
         end
@@ -134,14 +140,18 @@ SlashCmdList.SB = function(message)
             channel = "PARTY"
         end
     else
+
         C_ChatInfo.SendAddonMessage(addonPrefix, message, "WHISPER", playerName)
+
     end
 
     -- convert to lowercase
     message = strlower(strtrim(message))
 
-    -- Send it:
+    -- check if DND is on and send the message if not:
+    if not setDND then
     C_ChatInfo.SendAddonMessage(addonPrefix, message, channel)
+    end
 end
 
 C_ChatInfo.RegisterAddonMessagePrefix(addonPrefix)
