@@ -1,6 +1,6 @@
 ## Interface: 90002 
-## Title: |cff00FF96SoundBox|r 
-## Notes: Don't let your memes be dreams 
+## Title: |cff00FF96SoundBox|r|cffffffff: Don't Let your memes be dreams|r
+## Notes: Play meme sounds, type /sb help
 ## Author: Endouken, Desik 
 ## Version: @project-version@
 ## SavedVariables: SoundBoxDB
