@@ -77,7 +77,7 @@ SLASH_SB1 = "/sb"
 SlashCmdList.SB = function(message)
 
     if message == "stop" then
-       SBStopSound()          
+       SoundBox_Stop()          
     end
 
     if message == "version" then
