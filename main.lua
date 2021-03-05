@@ -12,7 +12,11 @@ local setDND = false
 local setDebug = false
 local version
 
-BINDING_NAME_SOUNDBOX_STOPSOUND = "Stop Sound"
+-- Globals
+
+_G ["BINDING_HEADER_SoundBox"] = "|cff00FF96SoundBox|r"
+_G ["BINDING_HEADER_SOUNDBOX_KEYBIND_ALLSOUNDS"] = "All Sounds"
+_G ["BINDING_NAME_SOUNDBOX_STOP_SOUND"] = "Stop Sound"
 
 --   Create listener Frame
 
@@ -93,8 +97,14 @@ SlashCmdList.SB = function(message)
         print("|cff00FF96SoundBox|r\124|Sounds: /sb |r" .. s)
     end
 
-    if message == "help" or message == "?" then
-        print("|cff00FF96SoundBox|r\124|Help: |cFFFF8040Commands: Help, Version, DND, Who, Stop \n                          Type /sb |cff00FF96sounds|r to see all available sounds.|r"
+    if message == "help" or message == "?" or message == "" then
+        print(
+        "|cff00FF96SoundBox|r\124|Help: type |cff00FF96/sb \"yoursound\"|r to meme\n",
+        "|cff00FF96/sb stop|r to stop all current sounds playing or set up a keybind!\n",
+        "|cff00FF96/sb sounds|r will display all sounds available\n",
+        "|cff00FF96/sb dnd|r to enable or disable \"Do Not Disturb\" mode\n",
+        "|cff00FF96/sb who|r to enable or disable the announcer\n",
+        "|cff00FF96/sb version|r to see what version you are running"
         )
     end
 
