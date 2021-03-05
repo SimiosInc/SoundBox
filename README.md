@@ -1,5 +1,5 @@
 ## SoundBox: Don't let your memes be dreams 
----
+.
 ## Introduction
 
 SoundBox is simple addon to play custom sounds in world of warcraft, other people in your group that also have the addon installed will hear the sounds too!
@@ -42,7 +42,7 @@ It is possible to set up a keybind to stop all sounds using the in-game keybinds
 + Select *SoundBox*
 + ??
 + Set it up.
-## Authors
 
-@endouken
-@desik
+## Contribute
+
+Open to new ideas, funding and usage ;)
