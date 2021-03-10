@@ -1,5 +1,7 @@
 ## SoundBox: Don't let your memes be dreams 
-.
+
+![SoundBox Logo](https://user-images.githubusercontent.com/31148/110697623-38adad00-81b2-11eb-9026-ba94b0a0d4d3.png)
+
 ## Introduction
 
 SoundBox is simple addon to play custom sounds in world of warcraft, other people in your group that also have the addon installed will hear the sounds too!
