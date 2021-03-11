@@ -11,7 +11,7 @@ goto end_of_file
 
 :has_folder
 echo Creating the TOC...
-echo ## Interface: 90002 > ..\SoundBox\SoundBox.toc
+echo ## Interface: 90005 > ..\SoundBox\SoundBox.toc
 echo ## Title: |cff00FF96SoundBox|r|cffffffff: Don't Let your memes be dreams|r >> ..\SoundBox\SoundBox.toc
 echo ## Notes: Play meme sounds, type /sb for help commands >> ..\SoundBox\SoundBox.toc
 echo ## Author: Endouken, Desik >> ..\SoundBox\SoundBox.toc
