@@ -22,3 +22,5 @@ jobs:
         uses: BigWigsMods/packager@master
         env:
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+          WAGOAPI: ${{ secrets.WAGOAPI }}
+          WOWI: ${{ secrets.WOWI }}
