@@ -4,6 +4,7 @@
 ## Author: Endouken, Desik 
 ## Version: @project-version@
 ## SavedVariables: SoundBoxDB
+## X-WoWI-ID: 25924
 
 #@no-lib-strip@ 
 libs\LibStub\LibStub.lua 
