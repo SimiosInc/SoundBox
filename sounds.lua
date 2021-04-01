@@ -56,7 +56,6 @@ local _, sounds = ...
    sounds["nooo"] = "nooo"
    sounds["nos"] = "nos"
    sounds["nudge"] = "nudge"
-   sounds["nudge"] = "nudge"
    sounds["ohbaby"] = "ohbaby"
    sounds["ohno"] = "ohno"
    sounds["padoru"] = "padoru"

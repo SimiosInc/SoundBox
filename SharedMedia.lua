@@ -54,7 +54,6 @@ LSM:Register("sound", "|cff00FF96SoundBox|r: niconi", [[Interface\Addons\SoundBo
 LSM:Register("sound", "|cff00FF96SoundBox|r: nono", [[Interface\Addons\SoundBox\sound\nono.ogg]])
 LSM:Register("sound", "|cff00FF96SoundBox|r: nooo", [[Interface\Addons\SoundBox\sound\nooo.ogg]])
 LSM:Register("sound", "|cff00FF96SoundBox|r: nos", [[Interface\Addons\SoundBox\sound\nos.ogg]])
-LSM:Register("sound", "|cff00FF96SoundBox|r: nudge", [[Interface\Addons\SoundBox\sound\nudge.mp3]])
 LSM:Register("sound", "|cff00FF96SoundBox|r: nudge", [[Interface\Addons\SoundBox\sound\nudge.ogg]])
 LSM:Register("sound", "|cff00FF96SoundBox|r: ohbaby", [[Interface\Addons\SoundBox\sound\ohbaby.ogg]])
 LSM:Register("sound", "|cff00FF96SoundBox|r: ohno", [[Interface\Addons\SoundBox\sound\ohno.ogg]])
