@@ -23,4 +23,3 @@ jobs:
         env:
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
           WOWI_API_TOKEN: ${{ secrets.WOWI }}
-          WAGO_API_TOKEN: ${{ secrets.WAGOAPI }}
