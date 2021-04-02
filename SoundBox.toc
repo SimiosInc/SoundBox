@@ -5,7 +5,6 @@
 ## Version: @project-version@
 ## SavedVariables: SoundBoxDB
 ## X-WoWI-ID: 25924
-## X-Wago-ID: Xb6XRoGp
 
 #@no-lib-strip@ 
 libs\LibStub\LibStub.lua 
