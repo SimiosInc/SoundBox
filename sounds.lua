@@ -8,6 +8,7 @@ local _, sounds = ...
    sounds["aleluya"] = "aleluya"
    sounds["allahu"] = "allahu"
    sounds["ara"] = "ara"
+   sounds["ayaya"] = "ayaya"
    sounds["babyshark"] = "babyshark"
    sounds["badum"] = "badum"
    sounds["bh"] = "bh"

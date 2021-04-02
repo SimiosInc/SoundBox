@@ -7,6 +7,7 @@ LSM:Register("sound", "|cff00FF96SoundBox|r: aiuda", [[Interface\Addons\SoundBox
 LSM:Register("sound", "|cff00FF96SoundBox|r: aleluya", [[Interface\Addons\SoundBox\sound\aleluya.ogg]])
 LSM:Register("sound", "|cff00FF96SoundBox|r: allahu", [[Interface\Addons\SoundBox\sound\allahu.ogg]])
 LSM:Register("sound", "|cff00FF96SoundBox|r: ara", [[Interface\Addons\SoundBox\sound\ara.ogg]])
+LSM:Register("sound", "|cff00FF96SoundBox|r: ayaya", [[Interface\Addons\SoundBox\sound\ayaya.ogg]])
 LSM:Register("sound", "|cff00FF96SoundBox|r: babyshark", [[Interface\Addons\SoundBox\sound\babyshark.ogg]])
 LSM:Register("sound", "|cff00FF96SoundBox|r: badum", [[Interface\Addons\SoundBox\sound\badum.ogg]])
 LSM:Register("sound", "|cff00FF96SoundBox|r: bh", [[Interface\Addons\SoundBox\sound\bh.ogg]])
