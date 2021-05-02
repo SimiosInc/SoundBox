@@ -1,13 +1,12 @@
 local _, S = ...
+local LSM = LibStub("LibSharedMedia-3.0")
 
 local addonPrefix = "SoundBox"
 local version = GetAddOnMetadata("SoundBox", "version")
-local folderName = "Interface\\AddOns\\SoundBox\\sound\\"
 local playerName = UnitName("player")
 local soundHandle
 local soundFileID = 0
 local playList = {}
-local sounds = S
 local setWho = true
 local setDND = false
 local setDebug = false
@@ -28,25 +27,16 @@ local f = CreateFrame("Frame")
 f:RegisterEvent("CHAT_MSG_ADDON")
 f:SetScript(
     "OnEvent",
-    function(self, event, prefix, message, channel, sender)
+    function(_, event, prefix, message, channel, sender)
         if event == "CHAT_MSG_ADDON" and prefix == addonPrefix then
-
-            -- compare the message with our sounds table
-
-            local fileName = sounds[message]
-            if not fileName then
-                return
-            end
-
-            -- we check if DND is on, proceed otherwise
-
             if not setDND then
+                -- we compose soundpath by feching LSM sounds using the prefix |cff00FF96SoundBox|r:
 
-                -- we compose sound file path
-
-                local soundPath = folderName .. fileName .. ".ogg"
+                local soundPath = LSM:Fetch("sound", "|cff00FF96SoundBox|r: " .. message)
                 local ok, _, handle = pcall(PlaySoundFile, soundPath, "Master")
-
+                if soundPath == 1 then
+                    ok = false
+                end
                 -- Once we have the soundpath, we get the handleID too
 
                 if ok then
@@ -65,15 +55,13 @@ f:SetScript(
                 --@debug@
                 if setDebug then
                     print(
-                        "|cff00FF96Prefix|r: " .. addonPrefix .. "\n",
-                        "|cff00FF96Folder|r: " .. folderName .. "\n",
-                        "|cff00FF96File|r: " .. fileName .. "\n",
+                        "|cff00FF96SoundPath|r: " .. soundPath .. "\n",
                         "|cff00FF96By|r: " .. sender .. "\n",
                         "|cff00FF96In|r: " .. channel .. "\n",
                         "|cff00FF96Handle|r: " .. handle
                     )
                 end
-                --@end-debug@
+            --@end-debug@
             end
         end
     end
@@ -106,11 +94,12 @@ SlashCmdList.SB = function(message)
     end
 
     if message == "sounds" then
-        local s = ""
-        for k, _ in pairs(sounds) do
-            s = s .. k .. ", "
+        local sounds = LSM:List("sound")
+        for _, v in pairs(sounds) do
+            if string.match(v, "|cff00FF96SoundBox|r:") then
+                print(v)
+            end
         end
-        print("|cff00FF96SoundBox|r\124|Sounds: /sb |r" .. s)
     end
 
     if message == "help" or message == "?" or message == "" then
@@ -180,5 +169,4 @@ SlashCmdList.SB = function(message)
     if not setDND then
         C_ChatInfo.SendAddonMessage(addonPrefix, message, channel)
     end
-
 end
