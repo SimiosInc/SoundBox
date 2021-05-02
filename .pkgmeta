@@ -12,5 +12,3 @@ ignore:
   - README.md
   - _sounds.bat
   - _create.bat
-  - _sharemedia.bat
-  - temp.lua
