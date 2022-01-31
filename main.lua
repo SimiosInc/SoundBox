@@ -32,14 +32,12 @@ f:SetScript(
             if not setDND then
                 -- we compose soundpath by feching LSM sounds using the prefix |cff00FF96SoundBox|r:
 
-                local soundPath = LSM:Fetch("sound", "|cff00FF96SoundBox|r: " .. message)
+                local soundPath = LSM:Fetch("sound", "|cff00FF96SoundBox|r: " .. message, "i") -- set "i" so its not none
                 local ok, _, handle = pcall(PlaySoundFile, soundPath, "Master")
-                if soundPath == 1 then
-                    ok = false
-                end
+
                 -- Once we have the soundpath, we get the handleID too
 
-                if ok then
+                if ok and handle ~= nil then
                     soundHandle = handle
                     soundFileID = soundFileID + 1
                     playList[soundFileID] = handle
@@ -47,21 +45,25 @@ f:SetScript(
 
                 -- we check if the announcer is on and that we actually have a valid message to print
 
-                if setWho == true and ok == true then
+                if setWho == true and handle ~= nil then
                     local name = Ambiguate(sender, "short")
-                    print("|cff00FF96SoundBox|r: |cFFFF8040" .. name .. "|r |cFFFF8040played " .. message .. "|r")
+                    print(
+                    --  "|cff00FF96SoundBox|r: |cFFFF8040" .. name .. "|r |cFFFF8040played " .. message .. "|r"
+                        "|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat:14:14:0:0:16:16:0:16:0:16:0:255:150|t|cff00FF96SoundBox|r: |cFFFFFFFF" .. name .. "|r |cFFFF8040played " .. message .. "|r"
+                    )
                 end
-
                 --@debug@
                 if setDebug then
                     print(
-                        "|cff00FF96SoundPath|r: " .. soundPath .. "\n",
+                        "|cff00FF96SoundPath|r: " .. (soundPath or " ") .. "\n",
                         "|cff00FF96By|r: " .. sender .. "\n",
+                        "|cff00FF96Message|r: " .. (message or " ") .. "\n",
                         "|cff00FF96In|r: " .. channel .. "\n",
-                        "|cff00FF96Handle|r: " .. handle
+                        "|cff00FF96SoundFileID|r: " .. soundFileID .. "\n",
+                        "|cff00FF96Handle|r: " .. (handle or " ") .. "\n"
                     )
                 end
-            --@end-debug@
+                --@end-debug@
             end
         end
     end
@@ -79,38 +81,65 @@ function SoundBox_Stop()
         end
         --@end-debug@
     end
+    print("|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat:14:14:0:0:16:16:0:16:0:16:0:255:150|t|cff00FF96SoundBox|r: |cFFFFFFFFAll Sounds Stopped|r")
+end
+
+local function SoundBox_Sound(message)
+    -- check if DND is on, send the message otherwise
+    if not setDND then
+        if IsInGroup() then
+            local channel =
+                (IsInGroup(LE_PARTY_CATEGORY_INSTANCE) and "INSTANCE_CHAT") or (IsInRaid() and "RAID") or (IsInGroup() and "PARTY") or "SAY"
+            C_ChatInfo.SendAddonMessage(addonPrefix, message, channel)
+        else
+            if message ~= "" then
+                C_ChatInfo.SendAddonMessage(addonPrefix, message, "WHISPER", playerName)
+            else
+                print("\n|cff00FF96/sb sounds|r will display all sounds available\n")
+            end
+        end
+    end
+end
+
+local function SoundBox_Help()
+    print(
+        '|cff00FF96/sb stop|r to stop all current sounds playing or set up a keybind!\n',
+        '|cff00FF96/sb sounds|r will display all sounds available\n',
+        '|cff00FF96SoundBox|r\124|Help: You might want to type |cff00FF96/sb "sound"|r to send sounds or\n',
+        '|cff00FF96/sb dnd|r to enable or disable "Do Not Disturb" mode\n',
+        '|cff00FF96/sb who|r to enable or disable the announcer\n'
+    )
+    print("\n|cff00FF96SoundBox|r: |cFFFF8040Version: |r" .. version)
+end
+
+local function SoundBox_List()
+    local sounds = LSM:List("sound")
+    for _, v in pairs(sounds) do
+        if string.match(v, "|cff00FF96SoundBox|r:") then
+            print(v)
+        end
+    end
 end
 
 -- Create Sender Slash Command
 
-SLASH_SB1 = "/sb"
-SlashCmdList.SB = function(message)
+SLASH_SoundBox1 = "/sb"
+SlashCmdList["SoundBox"] = function(message)
+    if message then
+        message = message:lower()
+        SoundBox_Sound(message)
+    end
+
+    if message == "help" or message == "?" then
+        SoundBox_Help()
+    end
+
     if message == "stop" then
         SoundBox_Stop()
     end
 
-    if message == "version" then
-        print("|cff00FF96SoundBox|r: |cFFFF8040Version: |r" .. version)
-    end
-
     if message == "sounds" then
-        local sounds = LSM:List("sound")
-        for _, v in pairs(sounds) do
-            if string.match(v, "|cff00FF96SoundBox|r:") then
-                print(v)
-            end
-        end
-    end
-
-    if message == "help" or message == "?" or message == "" then
-        print(
-            '|cff00FF96SoundBox|r\124|Help: You might want to type |cff00FF96/sb "sound"|r to send sounds or\n',
-            "|cff00FF96/sb stop|r to stop all current sounds playing or set up a keybind!\n",
-            "|cff00FF96/sb sounds|r will display all sounds available\n",
-            '|cff00FF96/sb dnd|r to enable or disable "Do Not Disturb" mode\n',
-            "|cff00FF96/sb who|r to enable or disable the announcer\n",
-            "|cff00FF96/sb version|r to see what version you are running"
-        )
+        SoundBox_List()
     end
 
     if message == "dnd" then
@@ -119,10 +148,20 @@ SlashCmdList.SB = function(message)
             print("|cff00FF96SoundBox|r\124|Set:|cFFFF8040 Do Not Disturb OFF|r")
         else
             setDND = true
+            SoundBox_Stop()
             print("|cff00FF96SoundBox|r\124|Set:|cFFFF8040 Do Not Disturb ON|r")
         end
     end
 
+    if message == "who" then
+        if setWho then
+            setWho = false
+            print("|cff00FF96SoundBox|r\124|Set:|cFFFF8040 Announcer OFF|r")
+        else
+            setWho = true
+            print("|cff00FF96SoundBox|r\124|Set:|cFFFF8040 Announcer ON|r")
+        end
+    end
     --@debug@
     if message == "debug" then
         if setDebug then
@@ -134,39 +173,4 @@ SlashCmdList.SB = function(message)
         end
     end
     --@end-debug@
-
-    if message == "who" then
-        if setWho then
-            setWho = false
-            print("|cff00FF96SoundBox|r\124|Set:|cFFFF8040 Announcer OFF|r")
-        else
-            setWho = true
-            print("|cff00FF96SoundBox|r\124|Set:|cFFFF8040 Announcer ON|r")
-        end
-    end
-
-    -- Set up the channel depending of group or solo
-
-    local channel
-    if IsInGroup() then
-        if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
-            channel = "INSTANCE_CHAT"
-        elseif IsInRaid() then
-            channel = "RAID"
-        elseif IsInGroup() then
-            channel = "PARTY"
-        end
-    else
-        C_ChatInfo.SendAddonMessage(addonPrefix, message, "WHISPER", playerName)
-    end
-
-    -- convert message to lowercase
-
-    message = strlower(strtrim(message))
-
-    -- check if DND is on, send the message otherwise
-
-    if not setDND then
-        C_ChatInfo.SendAddonMessage(addonPrefix, message, channel)
-    end
 end
