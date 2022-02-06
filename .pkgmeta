@@ -12,3 +12,8 @@ ignore:
   - README.md
   - _sounds.bat
   - _create.bat
+
+move-folders:
+  SoundBox/SoundBox: SoundBox
+  SoundBox/SoundBox_Custom: SoundBox_Custom
+  SoundBox/SoundBox_Latino: SoundBox_Latino
