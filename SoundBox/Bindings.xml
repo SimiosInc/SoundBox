@@ -1,0 +1,8 @@
+<Bindings>
+	<Binding name="SOUNDBOX_STOP_SOUND" description="Stop current playing sounds." header="SOUNDBOX_KEYBIND_ALLSOUNDS" category="|cff00FF96SoundBox|r">
+		SoundBox_Stop()
+	</Binding>
+	<Binding name="SOUNDBOX_TOGGLE_DND" description="Toggle -Do Not Disturb- Mode" category="|cff00FF96SoundBox|r">
+		SoundBox_DND()
+	</Binding>
+</Bindings>
