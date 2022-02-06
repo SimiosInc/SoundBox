@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="SOUNDBOX_STOP_SOUND" description="Stop current playing sounds." header="SOUNDBOX_KEYBIND_ALLSOUNDS" category="|cff00FF96SoundBox|r">
+		SoundBox_Stop()
+	</Binding>
+</Bindings>
