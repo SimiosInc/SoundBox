@@ -9,9 +9,8 @@ enable-nolib-creation: no
 wowi-archive-previous: no
 
 ignore:
-  - README.md
-  - _sounds.bat
-  - _create.bat
+  - SoundBox_Tools
+  - "*.bat"
 
 move-folders:
   SoundBox/SoundBox: SoundBox
