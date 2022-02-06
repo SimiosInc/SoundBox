@@ -46,12 +46,10 @@ f:SetScript(
                 end
 
                 -- we check if the announcer is on and that we actually have a valid message to print
-                if setWho == true then
-                    if handle ~= nil then
+                if setWho == true and handle ~= nil then
                         print(
                             icon .. "|cff00FF96SoundBox|r: |cFFFFFFFF" .. name .. "|r |cFFFF8040played " .. message .. "|r"
                         )
-                    end
                 end
 
                 -- send error to the player if message is not a sound
@@ -111,10 +109,7 @@ function SoundBox_Sound(message)
     if not setDND then
         if message ~= "" then
             if IsInGroup() then
-                local channel =
-                    (IsInGroup(LE_PARTY_CATEGORY_INSTANCE) and "INSTANCE_CHAT") or (IsInRaid() and "RAID") or
-                    (IsInGroup() and "PARTY") or
-                    "SAY"
+                local channel = (IsInGroup(LE_PARTY_CATEGORY_INSTANCE) and "INSTANCE_CHAT") or (IsInRaid() and "RAID") or(IsInGroup() and "PARTY") or "SAY"
                 C_ChatInfo.SendAddonMessage(addonPrefix, message, channel)
             else
                 C_ChatInfo.SendAddonMessage(addonPrefix, message, "WHISPER", playerName)
