@@ -118,7 +118,7 @@ function SoundBox_Sound(message)
     end
 end
 
-local function SoundBox_Help()
+function SoundBox_Help()
     print(
         '|cff00FF96SoundBox|r\124|Help: Type |cff00FF96/sb "sound"|r to send sounds\n',
         "|cff00FF96/sb sounds|r - Displays a list of all sounds available\n",
@@ -146,7 +146,8 @@ end
 
 SLASH_SB1 = "/sb"
 SlashCmdList.SB = function(message)
-    if message == "help" or message == "?" then
+
+    if message == "help" or message == "?" or message == "" then
         message = false
         SoundBox_Help()
     end
